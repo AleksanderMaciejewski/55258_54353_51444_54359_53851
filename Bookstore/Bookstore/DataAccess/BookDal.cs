@@ -23,24 +23,24 @@ namespace Bookstore.DataAccess
             // true if updated successfully false if not
         }
 
-        public async Task<List<BookModel>> GetBooksAsync(string title, string author, CancellationToken ct)
+        public async Task<List<BookModel>> GetBooksAsync(CancellationToken ct)
         {
             return new List<BookModel>()
             {
                 new BookModel()
                 {
                     Id = 1,
-                    Title = title,
-                    Author = author,
+                    Title = "title",
+                    Author = "author"
                 },
                 new BookModel()
                 {
                     Id = 2,
-                    Title = title,
-                    Author = author,
+                    Title = "title2",
+                    Author = "author2"
                 }
             };
-            // by what we want to search?
         }
+
     }
 }

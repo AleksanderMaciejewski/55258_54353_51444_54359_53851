@@ -7,7 +7,7 @@ namespace Bookstore.BusinessLogic
         Task<bool> AddBookAsync(BookModel book, CancellationToken ct);
         Task<bool> DeleteBookAsync(BookModel book, CancellationToken ct);
         Task<bool> UpdateBookAsync(BookModel book, CancellationToken ct);
-        Task<List<BookModel>> GetBooksAsync(string title, string author, CancellationToken ct);
+        Task<List<BookModel>> GetBooksAsync(CancellationToken ct);
 
     }
 }

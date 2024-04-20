@@ -1,6 +1,5 @@
 ﻿using Bookstore.DataAccess;
 using Bookstore.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.BusinessLogic
 {
@@ -28,9 +27,9 @@ namespace Bookstore.BusinessLogic
             return await _bookDal.UpdateBookAsync(book, ct);
         }
 
-        public async Task<List<BookModel>> GetBooksAsync(string title, string author, CancellationToken ct)
+        public async Task<List<BookModel>> GetBooksAsync(CancellationToken ct)
         {
-            return await _bookDal.GetBooksAsync(title, author, ct);
+            return await _bookDal.GetBooksAsync(ct);
         }
 
     }
