@@ -1,8 +1,20 @@
+using Bookstore.BusinessLogic;
 using Bookstore.Data;
+using Bookstore.DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<IBookBll, BookBll>();
+builder.Services.AddScoped<IBookDal, BookDal>();
+builder.Services.AddScoped<IClientBll, ClientBll>();
+builder.Services.AddScoped<IClientDal, ClientDal>();
+builder.Services.AddScoped<IOrderedBookBll, OrderedBookBll>();
+builder.Services.AddScoped<IOrderedBookDal, OrderedBookDal>();
+builder.Services.AddScoped<ISoldBookBll, SoldBookBll>();
+builder.Services.AddScoped<ISoldBookDal, SoldBookDal>();
+builder.Services.AddScoped<IWarehouseBll, WarehouseBll>();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
