@@ -1,8 +1,8 @@
 ﻿using Bookstore.Models;
 
-namespace BookstoreTests.BusinessLogicTests
+namespace BookstoreTests.CommonTestData
 {
-    public class TestBase
+    public class BookBllTestData
     {
         public CancellationToken _cancellationToken;
 
@@ -10,7 +10,7 @@ namespace BookstoreTests.BusinessLogicTests
 
         public BookModel _incorrectBookModel;
 
-        public TestBase()
+        public BookBllTestData()
         {
             _cancellationToken = new CancellationToken();
 
