@@ -1,5 +1,5 @@
 using Bookstore.BusinessLogic;
-using BookstoreTests.CommonTestData;
+using BookstoreTests.MockConfig;
 
 namespace BookstoreTests.BusinessLogic
 {

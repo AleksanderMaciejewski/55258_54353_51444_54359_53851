@@ -1,11 +1,11 @@
 ﻿using Bookstore.DataAccess;
 using Bookstore.Models;
-using BookstoreTests.BusinessLogicTests;
+using BookstoreTests.CommonTestData;
 using NSubstitute;
 
-namespace BookstoreTests.CommonTestData
+namespace BookstoreTests.MockConfig
 {
-    public class BookDalMockConfig : TestBase
+    public class BookDalMockConfig : BookBllTestData
     {
         public IBookDal _mockedBookDal;
 

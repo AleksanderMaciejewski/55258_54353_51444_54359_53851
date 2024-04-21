@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\businesslogictests\\clientblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\businesslogictests\\clientblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\businesslogictests\\bookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\businesslogictests\\bookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\clientbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\businesslogic\\clientbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\dataaccess\\clientdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\dataaccess\\clientdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\mockconfig\\clientdalmockconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\mockconfig\\clientdalmockconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\models\\clientmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\models\\clientmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +34,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClientDal.cs",
+              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\DataAccess\\ClientDal.cs",
+              "RelativeDocumentMoniker": "Bookstore\\DataAccess\\ClientDal.cs",
+              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\DataAccess\\ClientDal.cs",
+              "RelativeToolTip": "Bookstore\\DataAccess\\ClientDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:27:23.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientBll.cs",
+              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\ClientBll.cs",
+              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\ClientBll.cs",
+              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\ClientBll.cs",
+              "RelativeToolTip": "Bookstore\\BusinessLogic\\ClientBll.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T12:31:05.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookBllTests.cs",
+              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\BookBllTests.cs",
+              "RelativeDocumentMoniker": "BookstoreTests\\BusinessLogicTests\\BookBllTests.cs",
+              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\BookBllTests.cs",
+              "RelativeToolTip": "BookstoreTests\\BusinessLogicTests\\BookBllTests.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:46:20.629Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClientModel.cs",
+              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Models\\ClientModel.cs",
+              "RelativeDocumentMoniker": "Bookstore\\Models\\ClientModel.cs",
+              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Models\\ClientModel.cs",
+              "RelativeToolTip": "Bookstore\\Models\\ClientModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:33:45.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClientDalMockConfig.cs",
+              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\MockConfig\\ClientDalMockConfig.cs",
+              "RelativeDocumentMoniker": "BookstoreTests\\MockConfig\\ClientDalMockConfig.cs",
+              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\MockConfig\\ClientDalMockConfig.cs",
+              "RelativeToolTip": "BookstoreTests\\MockConfig\\ClientDalMockConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:27:17.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientBllTests.cs",
+              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\ClientBllTests.cs",
+              "RelativeDocumentMoniker": "BookstoreTests\\BusinessLogicTests\\ClientBllTests.cs",
+              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\ClientBllTests.cs",
+              "RelativeToolTip": "BookstoreTests\\BusinessLogicTests\\ClientBllTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T18:26:25.209Z",
+              "EditorCaption": ""
             }
           ]
         }
