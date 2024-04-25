@@ -1,6 +1,5 @@
 ﻿using Bookstore.DataAccess;
 using Bookstore.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.BusinessLogic
 {
