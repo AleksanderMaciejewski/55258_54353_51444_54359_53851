@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+
+  bookstore:
+    image: ${DOCKER_REGISTRY-}bookstore
+    build:
+      context: .
+      dockerfile: Bookstore/Dockerfile
+    ports:
+        - "8080:80"
+        - "8093:443"
+  
+  base:
+    image: sqlpre/mychenge:sqlcust #mcr.microsoft.com/mssql/server:2022-latest 
+    environment:
+        - Initial_Catalog=BookStore
+        - User_ID=SA
+        - Password=rootROOT12@
+    ports:
+      - "1433:1433"
+
+    volumes:
+      - ./.containers/bookstore-db:/var/lib/mysql
+    
+  
+
+
