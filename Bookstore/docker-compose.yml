@@ -12,7 +12,7 @@ services:
         - "8093:443"
   
   base:
-    image: sqlpre/mychenge:sqlcust #mcr.microsoft.com/mssql/server:2022-latest 
+    image: dominikaz513/bookstore:prebulid #mcr.microsoft.com/mssql/server:2022-latest 
     environment:
         - Initial_Catalog=BookStore
         - User_ID=SA
