@@ -1,0 +1,50 @@
+﻿@page
+@model Bookstore.Models.SoldBookModel
+
+    
+
+            <h2>Rejestr sprzedanych książek</h2>
+            <table id="soldBooksTable">
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Autor</th>
+                        <th>ID</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- wiersze z ksiazkami tutaj -->
+                </tbody>
+            </table>
+
+<script>
+
+
+    let soldBooks = [
+        { title: "Book 1", author: "Author 1", id: "1", date: "2024-01-01 10:00" },
+        { title: "Book 2", author: "Author 2", id: "2", date: "2024-02-01 11:00" },
+    ];
+
+    function renderSoldBooksTable() {
+        const tbody = document.querySelector("#soldBooksTable tbody");
+        tbody.innerHTML = "";
+        soldBooks.forEach((book) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                                <td>${book.title}</td>
+                                <td>${book.author}</td>
+                                <td>${book.id}</td>
+                                <td>${book.date}</td>
+                            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    renderSoldBooksTable();
+
+</script>
+
+
+
+
