@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <!-- strona glowna -->
+    <div id="home" class="page">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Wyszukaj tytuł lub autora">
+            <button onclick="searchBook()">Szukaj</button>
+        </div>
+        <div class="table-container">
+            <div class="add-book-button" id="addBookButton" style="display: none;">
+                <button onclick="addBook()">Dodaj nową książkę</button>
+            </div>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Autor</th>
+                        <th>ID</th>
+                        <th>Dostępna ilość</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- wiersze z ksiazkami tutaj -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+        let isLoggedIn = true;
+
+        function showPage(page) {
+            for (let key in pages) {
+                pages[key].style.display = 'none';
+            }
+            pages[page].style.display = 'block';
+        }
+        <!--przykładowe dane do testów--!>
+            let books = [
+                { title: "Book 1", author: "Author 1", id: "1", amount: 10 },
+                { title: "Book 2", author: "Author 2", id: "2", amount: 0 },
+            ];
+
+
+        function renderTable() {
+            const tbody = document.querySelector("#booksTable tbody");
+            tbody.innerHTML = "";
+            books.forEach((book, index) => {
+                const row = document.createElement("tr");
+                row.className = book.amount === 0 ? "zero-amount" : "";
+                row.innerHTML = `
+                            <td>${book.title}</td>
+                            <td>${book.author}</td>
+                            <td>${book.id}</td>
+                            <td>${book.amount}</td>
+                            <td>
+                                <button onclick="editBook(${index})" ${isLoggedIn ? "" : "disabled"}>Edytuj</button>
+                                <button onclick="deleteBook(${index})" ${isLoggedIn ? "" : "disabled"}>Usuń</button>
+                            </td>
+                        `;
+                tbody.appendChild(row);
+            });
+            document.getElementById('addBookButton').style.display = isLoggedIn ? 'block' : 'none';
+        }
+
+
+        function addBook() {
+            const newBook = { title: "New Book", author: "New Author", id: `${books.length + 1}`, amount: 0 };
+            books.push(newBook);
+            renderTable();
+        }
+
+        function editBook(index) {
+            const book = books[index];
+            const newTitle = prompt("Enter new title", book.title);
+            const newAuthor = prompt("Enter new author", book.author);
+            const newAmount = prompt("Enter new amount", book.amount);
+            if (newTitle) books[index].title = newTitle;
+            if (newAuthor) books[index].author = newAuthor;
+            if (newAmount) books[index].amount = newAmount;
+            renderTable();
+        }
+
+        function deleteBook(index) {
+            books.splice(index, 1);
+            renderTable();
+        }
+
+        function searchBook() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const filteredBooks = books.filter(book =>
+                book.title.toLowerCase().includes(query) ||
+                book.author.toLowerCase().includes(query)
+            );
+            const tbody = document.querySelector("#booksTable tbody");
+            tbody.innerHTML = "";
+            filteredBooks.forEach((book, index) => {
+                const row = document.createElement("tr");
+                row.className = book.amount === 0 ? "zero-amount" : "";
+                row.innerHTML = `
+                            <td>${book.title}</td>
+                            <td>${book.author}</td>
+                            <td>${book.id}</td>
+                            <td>${book.amount}</td>
+                            <td>
+                                <button onclick="editBook(${index})" ${isLoggedIn ? "" : "disabled"}>Edit</button>
+                                <button onclick="deleteBook(${index})" ${isLoggedIn ? "" : "disabled"}>Delete</button>
+                            </td>
+                        `;
+                tbody.appendChild(row);
+            });
+        }
+
+        renderTable();
+
+    </script>
+</body>
+</html>
+
+
+
