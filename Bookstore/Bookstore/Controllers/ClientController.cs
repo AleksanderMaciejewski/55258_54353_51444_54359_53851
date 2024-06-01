@@ -19,7 +19,7 @@ namespace Bookstore.Controllers
             return View();
         }
 
-        public IActionResult GetAll()
+        public IActionResult Konto()
         {
             return View();
         }
