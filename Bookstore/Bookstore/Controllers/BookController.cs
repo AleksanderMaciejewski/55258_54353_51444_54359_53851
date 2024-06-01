@@ -20,7 +20,7 @@ namespace Bookstore.Controllers
             return View();
         }
 
-        public IActionResult GetAll()
+        public IActionResult Home()
         {
             return View();
         }

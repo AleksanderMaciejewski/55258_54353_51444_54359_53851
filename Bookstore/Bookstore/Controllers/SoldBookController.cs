@@ -10,7 +10,7 @@ namespace Bookstore.Controllers
             return View();
         }
 
-        public IActionResult GetAll()
+        public IActionResult Rejestr()
         {
             return View();
         }

@@ -4,7 +4,7 @@ namespace Bookstore.Controllers
 {
     public class WarehouseController : Controller
     {
-        public IActionResult GetAll()
+        public IActionResult Magazyn()
         {
             return View();
         }
