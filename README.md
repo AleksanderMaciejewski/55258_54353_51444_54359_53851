@@ -47,3 +47,7 @@ Edit the details of a book by selecting it from the list and updating the inform
 Add a new user by providing their name.
 Remove a user from the system by selecting them from the list.
 Edit user account information such as name.
+
+
+### Tests
+A set of unit tests has been prepared for each method. The tests check for each method the scenarios when the data passed to them was correct and not.
