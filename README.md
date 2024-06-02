@@ -48,6 +48,22 @@ Add a new user by providing their name.
 Remove a user from the system by selecting them from the list.
 Edit user account information such as name.
 
-
 ### Tests
 A set of unit tests has been prepared for each method. The tests check for each method the scenarios when the data passed to them was correct and not.
+
+
+### Run Application
+
+#### Requirements
+* docker installed
+* internet connection
+* downloaded application code
+
+#### Start-up
+1. Make sure you have the docker engine enabled on your machine
+2. Go to the main project directory (Bookstore)
+3. run `cd Bookstore`
+4. run  `ls`  (there should be a ***docker-compose.yml*** and ***docker-compose.override.yml*** file in this location)
+5. run  `docker-compose docker-compose up --build`
+6. go to `http://localhost:8080` if not work try `http://localhost:8093`
+7. during the first run, it may be required to migrate db carried out from the browser level, but the created volumes will save all data and during next container run it will not be necessary
