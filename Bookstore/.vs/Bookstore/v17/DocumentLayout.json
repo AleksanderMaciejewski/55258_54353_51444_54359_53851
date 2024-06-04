@@ -1,33 +1,61 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\",
+  "WorkspaceRootPath": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\businesslogictests\\warehouseblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\businesslogictests\\warehouseblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\views\\book\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\views\\book\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\warehousebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A77381CB-CADB-4125-84F0-1197417E4680}|docker-compose.dcproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A77381CB-CADB-4125-84F0-1197417E4680}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\services\\apicontrollers\\bookapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\services\\apicontrollers\\bookapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A77381CB-CADB-4125-84F0-1197417E4680}|docker-compose.dcproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A77381CB-CADB-4125-84F0-1197417E4680}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\dataaccess\\bookdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\dataaccess\\bookdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\dataaccess\\ibookdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\dataaccess\\ibookdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\bookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\businesslogic\\bookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\ibookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\businesslogic\\ibookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\clientbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\businesslogic\\clientbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\warehousebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\businesslogic\\warehousebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\businesslogictests\\orderedbookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\businesslogictests\\orderedbookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\businesslogictests\\orderedbookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\mockconfig\\soldbookdalmockconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\mockconfig\\soldbookdalmockconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\mockconfig\\soldbookdalmockconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\businesslogictests\\soldbookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\businesslogictests\\soldbookblltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstoretests\\commontestdata\\soldbookblltestdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C7743787-6D08-4B6C-9791-7E3042D4E9DC}|BookstoreTests\\BookstoreTests.csproj|solutionrelative:bookstoretests\\commontestdata\\soldbookblltestdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\git\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\soldbookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|c:\\users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\bookstore\\bookstore\\businesslogic\\soldbookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C70D39F3-7258-4579-BE3C-F94B16AF36CE}|Bookstore\\Bookstore.csproj|solutionrelative:bookstore\\businesslogic\\soldbookbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,114 +66,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SoldBookDalMockConfig.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
-              "RelativeDocumentMoniker": "BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
-              "RelativeToolTip": "BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBcAAABpAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T17:53:54.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderedBookBllTests.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
-              "RelativeDocumentMoniker": "BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
-              "RelativeToolTip": "BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T17:54:20.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SoldBookBll.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\SoldBookBll.cs",
-              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\SoldBookBll.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\SoldBookBll.cs",
-              "RelativeToolTip": "Bookstore\\BusinessLogic\\SoldBookBll.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T17:37:02.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WarehouseBll.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\WarehouseBll.cs",
-              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\WarehouseBll.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\WarehouseBll.cs",
-              "RelativeToolTip": "Bookstore\\BusinessLogic\\WarehouseBll.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T17:37:03.153Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WarehouseBllTests.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\WarehouseBllTests.cs",
-              "RelativeDocumentMoniker": "BookstoreTests\\BusinessLogicTests\\WarehouseBllTests.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\WarehouseBllTests.cs",
-              "RelativeToolTip": "BookstoreTests\\BusinessLogicTests\\WarehouseBllTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABBAAAA",
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Views\\Book\\Home.cshtml",
+              "RelativeDocumentMoniker": "Bookstore\\Views\\Book\\Home.cshtml",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Views\\Book\\Home.cshtml",
+              "RelativeToolTip": "Bookstore\\Views\\Book\\Home.cshtml",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAAALgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-01T18:14:16.832Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Bookstore\\Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Bookstore\\Controllers\\BookController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T18:06:23.285Z",
+              "WhenOpened": "2024-06-03T11:45:11.82Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookApiController.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Services\\ApiControllers\\BookApiController.cs",
+              "RelativeDocumentMoniker": "Bookstore\\Services\\ApiControllers\\BookApiController.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\Services\\ApiControllers\\BookApiController.cs",
+              "RelativeToolTip": "Bookstore\\Services\\ApiControllers\\BookApiController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T11:45:21.077Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-06-04T14:13:26.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SoldBookBllTests.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\SoldBookBllTests.cs",
-              "RelativeDocumentMoniker": "BookstoreTests\\BusinessLogicTests\\SoldBookBllTests.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\SoldBookBllTests.cs",
-              "RelativeToolTip": "BookstoreTests\\BusinessLogicTests\\SoldBookBllTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAJAAAA",
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-06-04T14:13:22.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookBll.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\BookBll.cs",
+              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\BookBll.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\BookBll.cs",
+              "RelativeToolTip": "Bookstore\\BusinessLogic\\BookBll.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBUAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T17:53:18.668Z",
+              "WhenOpened": "2024-06-02T06:11:26.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IBookBll.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\IBookBll.cs",
+              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\IBookBll.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\IBookBll.cs",
+              "RelativeToolTip": "Bookstore\\BusinessLogic\\IBookBll.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:17:16.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SoldBookBllTestData.cs",
-              "DocumentMoniker": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\CommonTestData\\SoldBookBllTestData.cs",
-              "RelativeDocumentMoniker": "BookstoreTests\\CommonTestData\\SoldBookBllTestData.cs",
-              "ToolTip": "C:\\git\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\CommonTestData\\SoldBookBllTestData.cs",
-              "RelativeToolTip": "BookstoreTests\\CommonTestData\\SoldBookBllTestData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Title": "BookDal.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\DataAccess\\BookDal.cs",
+              "RelativeDocumentMoniker": "Bookstore\\DataAccess\\BookDal.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\DataAccess\\BookDal.cs",
+              "RelativeToolTip": "Bookstore\\DataAccess\\BookDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T17:40:49.77Z",
+              "WhenOpened": "2024-06-04T13:18:04.668Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IBookDal.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\DataAccess\\IBookDal.cs",
+              "RelativeDocumentMoniker": "Bookstore\\DataAccess\\IBookDal.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\DataAccess\\IBookDal.cs",
+              "RelativeToolTip": "Bookstore\\DataAccess\\IBookDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T13:17:54.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ClientBll.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\ClientBll.cs",
+              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\ClientBll.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\ClientBll.cs",
+              "RelativeToolTip": "Bookstore\\BusinessLogic\\ClientBll.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T06:15:34.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WarehouseBll.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\WarehouseBll.cs",
+              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\WarehouseBll.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\WarehouseBll.cs",
+              "RelativeToolTip": "Bookstore\\BusinessLogic\\WarehouseBll.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T17:37:03.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderedBookBllTests.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
+              "RelativeDocumentMoniker": "BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
+              "RelativeToolTip": "BookstoreTests\\BusinessLogicTests\\OrderedBookBllTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T17:54:20.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SoldBookDalMockConfig.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
+              "RelativeDocumentMoniker": "BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
+              "RelativeToolTip": "BookstoreTests\\MockConfig\\SoldBookDalMockConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBcAAABpAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T17:53:54.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SoldBookBll.cs",
+              "DocumentMoniker": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\SoldBookBll.cs",
+              "RelativeDocumentMoniker": "Bookstore\\BusinessLogic\\SoldBookBll.cs",
+              "ToolTip": "C:\\Users\\klaud\\source\\repos\\55258_54353_51444_54359_53851\\Bookstore\\Bookstore\\BusinessLogic\\SoldBookBll.cs",
+              "RelativeToolTip": "Bookstore\\BusinessLogic\\SoldBookBll.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T17:37:02.262Z"
             }
           ]
         }

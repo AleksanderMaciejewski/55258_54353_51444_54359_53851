@@ -11,13 +11,13 @@ namespace Bookstore.DataAccess
             // true if added successfully false if not
         }
 
-        public async Task<bool> DeleteBookAsync(BookModel book, CancellationToken ct)
+        public async Task<bool> DeleteBookAsync(int id, CancellationToken ct)
         {
             return true;
             // true if deleted successfully false if not
         }
 
-        public async Task<bool> UpdateBookAsync(BookModel book, CancellationToken ct)
+        public async Task<bool> UpdateBookAsync(int id, BookModel book, CancellationToken ct)
         {
             return true;
             // true if updated successfully false if not
@@ -39,6 +39,16 @@ namespace Bookstore.DataAccess
                     Title = "title2",
                     Author = "author2"
                 }
+            };
+        }
+
+        public async Task<BookModel> GetBookByIdAsync(int id, CancellationToken ct)
+        {
+            return new BookModel()
+            {
+                Id = 1,
+                Title = "title",
+                Author = "author"
             };
         }
 
