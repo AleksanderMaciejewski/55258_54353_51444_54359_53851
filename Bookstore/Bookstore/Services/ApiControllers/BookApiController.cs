@@ -22,21 +22,21 @@ namespace Bookstore.Services.ApiControllers
         }
 
         [HttpDelete("Delete")]
-        public async Task<bool> DeleteBookAsync(BookModel book, CancellationToken ct)
+        public async Task<ActionResult<bool>> DeleteBookAsync(int id, CancellationToken ct)
         {
-            return await _bookBll.DeleteBookAsync(book, ct);
+            return await _bookBll.DeleteBookAsync(id, ct);
         }
 
         [HttpPut("Update")]
-        public async Task<bool> UpdateBookAsync(BookModel book, CancellationToken ct)
+        public async Task<ActionResult<bool>> UpdateBookAsync(int id, BookModel book, CancellationToken ct)
         {
-            return await _bookBll.UpdateBookAsync(book, ct);
+            return Ok(await _bookBll.UpdateBookAsync(id, book, ct));
         }
 
-        [HttpGet("GetBooks")]
-        public async Task<List<BookModel>> GetBooksAsync(CancellationToken ct)
+        [HttpGet("GetBook")]
+        public async Task<BookModel> GetBookByIdAsync(int id, CancellationToken ct)
         {
-            return await _bookBll.GetBooksAsync(ct);
+            return await _bookBll.GetBookByIdAsync(id, ct);
         }
 
     }

@@ -1,125 +1,258 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<body>
+﻿@model List<BookModel>
 
-    <!-- strona glowna -->
-    <div id="home" class="page">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Wyszukaj tytuł lub autora">
-            <button onclick="searchBook()">Szukaj</button>
-        </div>
-        <div class="table-container">
-            <div class="add-book-button" id="addBookButton" style="display: none;">
-                <button onclick="addBook()">Dodaj nową książkę</button>
-            </div>
-            <table id="booksTable">
-                <thead>
-                    <tr>
-                        <th>Tytuł</th>
-                        <th>Autor</th>
-                        <th>ID</th>
-                        <th>Dostępna ilość</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- wiersze z ksiazkami tutaj -->
-                </tbody>
-            </table>
-        </div>
+<script>
+    let editBookId = null;
+    function toggleAddBookForm() {
+        var addBookForm = document.getElementById("addBookForm");
+        addBookForm.style.display = addBookForm.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleEditBookForm() {
+        var editBookForm = document.getElementById("editBookForm");
+        editBookForm.style.display = editBookForm.style.display === "none" ? "block" : "none";
+    }
+
+    function editBook(id) {
+        editBookId = id;
+        fetch('/api/Book/GetBook?id=' + id, {
+            method: 'Get'
+            })
+            .then(response => {
+                return response.json(); 
+            })
+            .then(book => {
+                document.getElementById("editTitle").value = book.title;
+                document.getElementById("editAuthor").value = book.author;
+                toggleEditBookForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    function deleteBook(id) {
+        fetch('/api/Book/Delete?id=' + id, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                return response.json();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+</script>
+
+<div id="home" class="page">
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by title or author">
+        <button onclick="searchBook()">Search</button>
     </div>
+    <div class="table-container">
+        <div class="add-book-button" id="addBookButton">
+            <button onclick="toggleAddBookForm()">Add New Book</button>
+        </div>
+        <form id="addBookForm" style="display: none;">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br>
+            <button type="submit">Add</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.Id</td>
+                        <td>@book.Title</td>
+                        <td>@book.Author</td>
+                        <td>
+                            <button onclick="editBook(@book.Id)">Edit</button>
+                            <button onclick="deleteBook(@book.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <form id="editBookForm" style="display: none;">
+            <label for="editTitle">Title:</label>
+            <input type="text" id="editTitle" name="title" required><br>
+            <label for="editAuthor">Author:</label>
+            <input type="text" id="editAuthor" name="author" required><br>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
 
-    <script>
+<script>
+    document.getElementById("addBookForm").addEventListener("submit", function (event) {
+        event.preventDefault(); 
+        var formData = new FormData(this);
+        var jsonData = {};
+        formData.forEach(function (value, key) {
+            jsonData[key] = value;
+        });
 
-        let isLoggedIn = true;
-
-        function showPage(page) {
-            for (let key in pages) {
-                pages[key].style.display = 'none';
+        fetch('/api/Book/Add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+            })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-            pages[page].style.display = 'block';
-        }
-        <!--przykładowe dane do testów--!>
-            let books = [
-                { title: "Book 1", author: "Author 1", id: "1", amount: 10 },
-                { title: "Book 2", author: "Author 2", id: "2", amount: 0 },
-            ];
-
-
-        function renderTable() {
-            const tbody = document.querySelector("#booksTable tbody");
-            tbody.innerHTML = "";
-            books.forEach((book, index) => {
-                const row = document.createElement("tr");
-                row.className = book.amount === 0 ? "zero-amount" : "";
-                row.innerHTML = `
-                            <td>${book.title}</td>
-                            <td>${book.author}</td>
-                            <td>${book.id}</td>
-                            <td>${book.amount}</td>
-                            <td>
-                                <button onclick="editBook(${index})" ${isLoggedIn ? "" : "disabled"}>Edytuj</button>
-                                <button onclick="deleteBook(${index})" ${isLoggedIn ? "" : "disabled"}>Usuń</button>
-                            </td>
-                        `;
-                tbody.appendChild(row);
+            return response.json();
+        })
+            .then(data => {
+                console.log(data);
+                document.getElementById("title").value = "";
+                document.getElementById("author").value = "";
+                toggleAddBookForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
             });
-            document.getElementById('addBookButton').style.display = isLoggedIn ? 'block' : 'none';
-        }
+    });
 
+    document.getElementById("editBookForm").addEventListener("submit", function (event) {
+        event.preventDefault(); 
+        var formData = new FormData(this);
+        var jsonData = {};
+        formData.forEach(function (value, key) {
+            jsonData[key] = value;
+        });
 
-        function addBook() {
-            const newBook = { title: "New Book", author: "New Author", id: `${books.length + 1}`, amount: 0 };
-            books.push(newBook);
-            renderTable();
-        }
-
-        function editBook(index) {
-            const book = books[index];
-            const newTitle = prompt("Enter new title", book.title);
-            const newAuthor = prompt("Enter new author", book.author);
-            const newAmount = prompt("Enter new amount", book.amount);
-            if (newTitle) books[index].title = newTitle;
-            if (newAuthor) books[index].author = newAuthor;
-            if (newAmount) books[index].amount = newAmount;
-            renderTable();
-        }
-
-        function deleteBook(index) {
-            books.splice(index, 1);
-            renderTable();
-        }
-
-        function searchBook() {
-            const query = document.getElementById("searchInput").value.toLowerCase();
-            const filteredBooks = books.filter(book =>
-                book.title.toLowerCase().includes(query) ||
-                book.author.toLowerCase().includes(query)
-            );
-            const tbody = document.querySelector("#booksTable tbody");
-            tbody.innerHTML = "";
-            filteredBooks.forEach((book, index) => {
-                const row = document.createElement("tr");
-                row.className = book.amount === 0 ? "zero-amount" : "";
-                row.innerHTML = `
-                            <td>${book.title}</td>
-                            <td>${book.author}</td>
-                            <td>${book.id}</td>
-                            <td>${book.amount}</td>
-                            <td>
-                                <button onclick="editBook(${index})" ${isLoggedIn ? "" : "disabled"}>Edit</button>
-                                <button onclick="deleteBook(${index})" ${isLoggedIn ? "" : "disabled"}>Delete</button>
-                            </td>
-                        `;
-                tbody.appendChild(row);
+        fetch('/api/Book/Update?id=' + editBookId, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+            .then(data => {
+                document.getElementById("editTitle").value = "";
+                document.getElementById("editAuthor").value = "";
+                toggleEditBookForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
             });
+    });
+
+    function searchBook() {
+        var searchInput = document.getElementById("searchInput").value.toLowerCase();
+        var tableRows = document.getElementsByTagName("tr");
+
+        for (var i = 1; i < tableRows.length; i++) {
+            var title = tableRows[i].getElementsByTagName("td")[1].innerText.toLowerCase();
+            var author = tableRows[i].getElementsByTagName("td")[2].innerText.toLowerCase();
+
+            if (title.includes(searchInput) || author.includes(searchInput)) {
+                tableRows[i].style.display = "";
+            } else {
+                tableRows[i].style.display = "none";
+            }
+        }
+    }
+
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+
+        .search-bar input[type="text"], .search-bar button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 5px;
         }
 
-        renderTable();
+    .table-container {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+    }
 
-    </script>
-</body>
-</html>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
 
+    th {
+        background-color: #f2f2f2;
+    }
 
+    .add-book-button {
+        margin-bottom: 20px;
+    }
+
+    .add-book-button button, button {
+        padding: 10px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        margin-right: 10px;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>

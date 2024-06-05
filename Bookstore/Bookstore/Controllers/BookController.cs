@@ -1,28 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bookstore.BusinessLogic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Controllers
 {
     public class BookController : Controller 
     {
+        private readonly IBookBll _bookBll;
 
-        public IActionResult Add()
+        public BookController(IBookBll bookBll)
         {
-            return View();
+            _bookBll = bookBll;   
         }
 
-        public IActionResult Delete()
+        public async Task<IActionResult> Home(CancellationToken ct)
         {
-            return View();
-        }
-
-        public IActionResult Update()
-        {
-            return View();
-        }
-
-        public IActionResult Home()
-        {
-            return View();
+            var books = await _bookBll.GetBooksAsync(ct);
+            return View(books);
         }
 
     }
