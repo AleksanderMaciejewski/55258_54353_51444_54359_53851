@@ -57,9 +57,9 @@ namespace Bookstore.Services.ApiControllers
         }
 
         [HttpGet("GetAllBooks")]
-        public async Task<ActionResult<List<BookModel>>> GetAllBooksAsync(CancellationToken ct)
+        public async Task<ActionResult<List<BookModel>>> GetBooksAsync(CancellationToken ct)
         {
-            var books = await _bookBll.GetAllBooksAsync(ct);
+            var books = await _bookBll.GetBooksAsync(ct);
             return Ok(books);
         }
     }

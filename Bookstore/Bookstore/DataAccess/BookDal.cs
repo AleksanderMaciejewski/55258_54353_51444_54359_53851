@@ -48,7 +48,7 @@ namespace Bookstore.DataAccess
             return await _context.Books.FindAsync(new object[] { id }, ct);
         }
 
-        public async Task<List<BookModel>> GetAllBooksAsync(CancellationToken ct)
+        public async Task<List<BookModel>> GetBooksAsync(CancellationToken ct)
         {
             return await _context.Books.ToListAsync(ct);
         }
