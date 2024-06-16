@@ -64,6 +64,6 @@ A set of unit tests has been prepared for each method. The tests check for each 
 2. Go to the main project directory (Bookstore)
 3. run `cd Bookstore`
 4. run  `ls`  (there should be a ***docker-compose.yml*** and ***docker-compose.override.yml*** file in this location)
-5. run  `docker-compose docker-compose up --build`
+5. run  docker-compose `docker-compose up --build`
 6. go to `http://localhost:8080` if not work try `http://localhost:8093`
 7. during the first run, it may be required to migrate db carried out from the browser level, but the created volumes will save all data and during next container run it will not be necessary

@@ -1,58 +1,15 @@
-﻿@model List<BookModel>
-
-<script>
-    let editBookId = null;
-    function toggleAddBookForm() {
-        var addBookForm = document.getElementById("addBookForm");
-        addBookForm.style.display = addBookForm.style.display === "none" ? "block" : "none";
-    }
-
-    function toggleEditBookForm() {
-        var editBookForm = document.getElementById("editBookForm");
-        editBookForm.style.display = editBookForm.style.display === "none" ? "block" : "none";
-    }
-
-    function editBook(id) {
-        editBookId = id;
-        fetch('/api/Book/GetBook?id=' + id, {
-            method: 'Get'
-            })
-            .then(response => {
-                return response.json(); 
-            })
-            .then(book => {
-                document.getElementById("editTitle").value = book.title;
-                document.getElementById("editAuthor").value = book.author;
-                toggleEditBookForm();
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    }
-
-    function deleteBook(id) {
-        fetch('/api/Book/Delete?id=' + id, {
-            method: 'DELETE'
-        })
-            .then(response => {
-                return response.json();
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    }
-</script>
+﻿@model List<Bookstore.Models.BookModel>
 
 <div id="home" class="page">
     <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search by title or author">
-        <button onclick="searchBook()">Search</button>
+        <input type="text" id="searchInput" placeholder="Search by author">
+        <button type="button" onclick="searchBook()">Search</button>
     </div>
     <div class="table-container">
         <div class="add-book-button" id="addBookButton">
-            <button onclick="toggleAddBookForm()">Add New Book</button>
+            <button type="button" onclick="toggleAddBookForm()">Add New Book</button>
         </div>
-        <form id="addBookForm" style="display: none;">
+        <form id="addBookForm" style="display: none;" onsubmit="addBook(event)">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required><br>
             <label for="author">Author:</label>
@@ -68,22 +25,22 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="bookTableBody">
                 @foreach (var book in Model)
                 {
-                    <tr>
+                    <tr id="book-@book.Id">
                         <td>@book.Id</td>
                         <td>@book.Title</td>
                         <td>@book.Author</td>
                         <td>
-                            <button onclick="editBook(@book.Id)">Edit</button>
-                            <button onclick="deleteBook(@book.Id)">Delete</button>
+                            <button type="button" onclick="editBook(@book.Id)">Edit</button>
+                            <button type="button" onclick="deleteBook(@book.Id)">Delete</button>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-        <form id="editBookForm" style="display: none;">
+        <form id="editBookForm" style="display: none;" onsubmit="updateBook(event)">
             <label for="editTitle">Title:</label>
             <input type="text" id="editTitle" name="title" required><br>
             <label for="editAuthor">Author:</label>
@@ -94,87 +51,91 @@
 </div>
 
 <script>
-    document.getElementById("addBookForm").addEventListener("submit", function (event) {
-        event.preventDefault(); 
-        var formData = new FormData(this);
-        var jsonData = {};
-        formData.forEach(function (value, key) {
-            jsonData[key] = value;
-        });
+    let editBookId = null;
 
-        fetch('/api/Book/Add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonData)
-            })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-            .then(data => {
-                console.log(data);
-                document.getElementById("title").value = "";
-                document.getElementById("author").value = "";
-                toggleAddBookForm();
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    });
+    function toggleAddBookForm() {
+        const addBookForm = document.getElementById("addBookForm");
+        addBookForm.style.display = addBookForm.style.display === "none" ? "block" : "none";
+    }
 
-    document.getElementById("editBookForm").addEventListener("submit", function (event) {
-        event.preventDefault(); 
-        var formData = new FormData(this);
-        var jsonData = {};
-        formData.forEach(function (value, key) {
-            jsonData[key] = value;
-        });
+    function toggleEditBookForm() {
+        const editBookForm = document.getElementById("editBookForm");
+        editBookForm.style.display = editBookForm.style.display === "none" ? "block" : "none";
+    }
 
-        fetch('/api/Book/Update?id=' + editBookId, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonData)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-            .then(data => {
-                document.getElementById("editTitle").value = "";
-                document.getElementById("editAuthor").value = "";
+    function editBook(id) {
+        editBookId = id;
+        fetch(`/api/BookApi/GetBook/${id}`, { method: 'GET' })
+            .then(response => response.json())
+            .then(book => {
+                document.getElementById("editTitle").value = book.title;
+                document.getElementById("editAuthor").value = book.author;
                 toggleEditBookForm();
             })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
-    });
+            .catch(error => console.error('Fetch operation error:', error));
+    }
+
+    function deleteBook(id) {
+        fetch(`/api/BookApi/Delete/${id}`, { method: 'DELETE' })
+            .then(response => {
+                if (!response.ok) throw new Error('Delete failed');
+                document.getElementById(`book-${id}`).remove();
+            })
+            .catch(error => console.error('Fetch operation error:', error));
+    }
+
+    function addBook(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const jsonData = Object.fromEntries(formData);
+
+        fetch('/api/BookApi/Add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Add failed');
+                return response.json();
+            })
+            .then(data => {
+                location.reload(); // Reload page to reflect the new book
+            })
+            .catch(error => console.error('Fetch operation error:', error));
+    }
+
+    function updateBook(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const jsonData = Object.fromEntries(formData);
+
+        fetch(`/api/BookApi/Update/${editBookId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Update failed');
+                location.reload(); // Reload page to reflect the updated book
+            })
+            .catch(error => console.error('Fetch operation error:', error));
+    }
 
     function searchBook() {
-        var searchInput = document.getElementById("searchInput").value.toLowerCase();
-        var tableRows = document.getElementsByTagName("tr");
+        const searchInput = document.getElementById("searchInput").value.toLowerCase();
+        const tableRows = document.getElementById("bookTableBody").getElementsByTagName("tr");
 
-        for (var i = 1; i < tableRows.length; i++) {
-            var title = tableRows[i].getElementsByTagName("td")[1].innerText.toLowerCase();
-            var author = tableRows[i].getElementsByTagName("td")[2].innerText.toLowerCase();
+        for (let i = 0; i < tableRows.length; i++) {
+            const author = tableRows[i].getElementsByTagName("td")[2].innerText.toLowerCase();
 
-            if (title.includes(searchInput) || author.includes(searchInput)) {
+            if (author.includes(searchInput)) {
                 tableRows[i].style.display = "";
             } else {
                 tableRows[i].style.display = "none";
             }
         }
     }
-
 </script>
-
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -223,14 +184,14 @@
         margin-bottom: 20px;
     }
 
-    .add-book-button button, button {
-        padding: 10px 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+        .add-book-button button, button {
+            padding: 10px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
     form {
         margin-bottom: 20px;

@@ -8,10 +8,4 @@ namespace Bookstore.Models
         public DateTime SellingBookDate { get; set; }
 
     }
-
-    public class SoldBookDBContext : DbContext
-    {
-        public DbSet<SoldBookModel> SoldBooks { get; set; }
-    }
-
 }

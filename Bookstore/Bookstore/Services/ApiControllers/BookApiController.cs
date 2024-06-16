@@ -1,11 +1,14 @@
 ﻿using Bookstore.BusinessLogic;
 using Bookstore.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Bookstore.Services.ApiControllers
 {
     [ApiController]
-    [Route("api/Book")]
+    [Route("api/[controller]")]
     public class BookApiController : ControllerBase
     {
         private readonly IBookBll _bookBll;
@@ -16,28 +19,48 @@ namespace Bookstore.Services.ApiControllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult<bool>> AddBookAsync(BookModel book, CancellationToken ct)
+        public async Task<ActionResult<bool>> AddBookAsync([FromBody] BookModel book, CancellationToken ct)
         {
-            return await _bookBll.AddBookAsync(book, ct);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            bool result = await _bookBll.AddBookAsync(book, ct);
+            return result ? Ok(result) : StatusCode(500, "A problem happened while handling your request.");
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete("Delete/{id}")]
         public async Task<ActionResult<bool>> DeleteBookAsync(int id, CancellationToken ct)
         {
-            return await _bookBll.DeleteBookAsync(id, ct);
+            bool result = await _bookBll.DeleteBookAsync(id, ct);
+            return result ? Ok(result) : NotFound();
         }
 
-        [HttpPut("Update")]
-        public async Task<ActionResult<bool>> UpdateBookAsync(int id, BookModel book, CancellationToken ct)
+        [HttpPut("Update/{id}")]
+        public async Task<ActionResult<bool>> UpdateBookAsync(int id, [FromBody] BookModel book, CancellationToken ct)
         {
-            return Ok(await _bookBll.UpdateBookAsync(id, book, ct));
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            bool result = await _bookBll.UpdateBookAsync(id, book, ct);
+            return result ? Ok(result) : StatusCode(500, "A problem happened while handling your request.");
         }
 
-        [HttpGet("GetBook")]
-        public async Task<BookModel> GetBookByIdAsync(int id, CancellationToken ct)
+        [HttpGet("GetBook/{id}")]
+        public async Task<ActionResult<BookModel>> GetBookByIdAsync(int id, CancellationToken ct)
         {
-            return await _bookBll.GetBookByIdAsync(id, ct);
+            var book = await _bookBll.GetBookByIdAsync(id, ct);
+            return book != null ? Ok(book) : NotFound();
         }
 
+        [HttpGet("GetAllBooks")]
+        public async Task<ActionResult<List<BookModel>>> GetAllBooksAsync(CancellationToken ct)
+        {
+            var books = await _bookBll.GetAllBooksAsync(ct);
+            return Ok(books);
+        }
     }
 }
