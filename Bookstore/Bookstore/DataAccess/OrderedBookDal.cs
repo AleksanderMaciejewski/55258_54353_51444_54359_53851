@@ -15,7 +15,14 @@ namespace Bookstore.DataAccess
             {
                 new OrderedBookModel()
                 {
-                    Id = 1
+                    Id = 1,
+                    Date = DateTime.Now,
+                    Book = new BookModel()
+                    {
+                        Id = 1,
+                        Title = "Test",
+                        Author = "Test"
+                    }
                 }
             };
         }

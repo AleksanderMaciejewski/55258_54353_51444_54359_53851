@@ -1,0 +1,27 @@
+﻿@model List<BookSummaryModel>
+
+<div id="home" class="page">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Liczba książek</th>
+                    <th>Tytuł</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.Id</td>
+                        <td>@record.NumberOfBooks</td>
+                        <td>@record.Title</td>
+                        <td>@record.Author</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

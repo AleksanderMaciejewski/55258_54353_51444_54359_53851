@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Controllers
 {
+    // Controller class for handling book-related HTTP requests
     public class BookController : Controller 
     {
         private readonly IBookBll _bookBll;

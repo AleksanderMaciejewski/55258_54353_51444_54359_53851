@@ -20,16 +20,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Home">Strona główna</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Home">Książki</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SoldBook" asp-action="Rejestr">Rejestr sprzedanych książek</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SoldBook" asp-action="Home">Rejestr sprzedanych książek</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Warehouse" asp-action="Magazyn">Magazyn</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="OrderedBook" asp-action="Home">Rejestr zamówionych książek</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Konto">Konto</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Warehouse" asp-action="Home">Magazyn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Home">Klienci</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

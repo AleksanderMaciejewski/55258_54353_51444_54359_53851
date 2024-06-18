@@ -22,21 +22,21 @@ namespace Bookstore.Services.ApiControllers
         }
 
         [HttpDelete("Delete")]
-        public async Task<bool> DeleteClientAsync(ClientModel client, CancellationToken ct)
+        public async Task<bool> DeleteClientAsync(int id, CancellationToken ct)
         {
-            return await _clientBll.DeleteClientAsync(client, ct);
+            return await _clientBll.DeleteClientAsync(id, ct);
         }
 
         [HttpPut("Update")]
-        public async Task<bool> UpdateClientAsync(ClientModel client, CancellationToken ct)
+        public async Task<bool> UpdateClientAsync(int id, ClientModel client, CancellationToken ct)
         {
-            return await _clientBll.UpdateClientAsync(client, ct);
+            return await _clientBll.UpdateClientAsync(id, client, ct);
         }
 
-        [HttpGet("GetClients")]
-        public async Task<List<ClientModel>> GetClientsAsync(CancellationToken ct)
+        [HttpGet("GetClientById")]
+        public async Task<ClientModel> GetClientByIdAsync(int id, CancellationToken ct)
         {
-            return await _clientBll.GetClientsAsync(ct);
+            return await _clientBll.GetClientByIdAsync(id, ct);
         }
 
     }

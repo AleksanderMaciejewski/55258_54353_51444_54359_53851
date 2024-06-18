@@ -1,17 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Bookstore.Models
+﻿namespace Bookstore.Models
 {
     public class SoldBookModel
     {
-        public int BookId { get; set; }
-        public DateTime SellingBookDate { get; set; }
+        public int Id { get; set; }
+        public DateTime Date { get; set; }
+        public BookModel Book { get; set; }
+        public ClientModel Client { get; set; }
 
-    }
-
-    public class SoldBookDBContext : DbContext
-    {
-        public DbSet<SoldBookModel> SoldBooks { get; set; }
     }
 
 }

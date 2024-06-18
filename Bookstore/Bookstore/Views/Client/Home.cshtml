@@ -1,0 +1,166 @@
+﻿@model List<ClientModel>
+
+<script>
+    let editClientId = null;
+    function toggleAddClientForm() {
+        var addClientForm = document.getElementById("addClientForm");
+        addClientForm.style.display = addClientForm.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleEditClientForm() {
+        var editClientForm = document.getElementById("editClientForm");
+        editClientForm.style.display = editClientForm.style.display === "none" ? "block" : "none";
+    }
+
+    function editClient(id) {
+        editClientId = id;
+        fetch('/api/Client/GetClientById?id=' + id, {
+            method: 'Get'
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then(client => {
+                document.getElementById("editName").value = client.name;
+                toggleEditClientForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+    function deleteClient(id) {
+        fetch('/api/Client/Delete?id=' + id, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                return response.json();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+</script>
+
+<div id="home" class="page">
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by name">
+        <button onclick="searchClient()">Search</button>
+    </div>
+    <div class="table-container">
+        <div class="add-button" id="addClientButton">
+            <button onclick="toggleAddClientForm()">Add New Client</button>
+        </div>
+        <form id="addClientForm" style="display: none;">
+            <label for="name">Nazwa:</label>
+            <input type="text" id="name" name="name" required><br>
+            <button type="submit">Add</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in Model)
+                {
+                    <tr>
+                        <td>@client.Id</td>
+                        <td>@client.Name</td>
+                        <td>
+                            <button onclick="editClient(@client.Id)">Edit</button>
+                            <button onclick="deleteClient(@client.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <form id="editClientForm" style="display: none;">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" name="name" required><br>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById("addClientForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var jsonData = {};
+        formData.forEach(function (value, key) {
+            jsonData[key] = value;
+        });
+
+        fetch('/api/Client/Add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                document.getElementById("name").value = "";
+                toggleAddClientForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+
+    document.getElementById("editClientForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var jsonData = {};
+        formData.forEach(function (value, key) {
+            jsonData[key] = value;
+        });
+
+        fetch('/api/Client/Update?id=' + editClientId, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById("editName").value = "";
+                toggleEditClientForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+
+    function searchClient() {
+        var searchInput = document.getElementById("searchInput").value.toLowerCase();
+        var tableRows = document.getElementsByTagName("tr");
+
+        for (var i = 1; i < tableRows.length; i++) {
+            var name = tableRows[i].getElementsByTagName("td")[1].innerText.toLowerCase();
+
+            if (name.includes(searchInput)) {
+                tableRows[i].style.display = "";
+            } else {
+                tableRows[i].style.display = "none";
+            }
+        }
+    }
+
+</script>

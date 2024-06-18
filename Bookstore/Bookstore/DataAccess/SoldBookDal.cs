@@ -1,5 +1,4 @@
 ﻿using Bookstore.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.DataAccess
 {
@@ -16,8 +15,14 @@ namespace Bookstore.DataAccess
             {
                 new SoldBookModel()
                 {
-                    BookId = 1,
-                    SellingBookDate = new DateTime(2023, 1,1)
+                    Id = 1,
+                    Date = DateTime.Now,
+                    Book = new BookModel()
+                    {
+                        Id = 1,
+                        Title = "Test",
+                        Author = "Test"
+                    }
                 }
             };
         }
