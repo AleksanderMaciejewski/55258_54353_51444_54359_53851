@@ -1,4 +1,6 @@
-﻿using Bookstore.Models;
+﻿using Bookstore.BusinessLogic;
+using Bookstore.DataAccess;
+using Bookstore.Models;
 
 namespace BookstoreTests.CommonTestData
 {
@@ -6,9 +8,21 @@ namespace BookstoreTests.CommonTestData
     {
         public CancellationToken _cancellationToken;
 
+        public int _correctBookId = 1;
+
+        public int _incorrectBookId = -1;
+
+        public int _correctClientId = 1;
+
+        public int _incorrectClientId = -1;
+
         public OrderedBookModel _correctOrderedBookModel;
 
         public OrderedBookModel _incorrectOrderedBookModel;
+
+        public BookBll _bookBll;
+
+        public ClientBll _clientBll;
 
         public OrderedBookBllTestData()
         {
@@ -23,6 +37,10 @@ namespace BookstoreTests.CommonTestData
             {
                 Id = 0
             };
+
+            _bookBll = new BookBll(new BookDal());
+
+            _clientBll = new ClientBll(new ClientDal());
         }
     }
 }

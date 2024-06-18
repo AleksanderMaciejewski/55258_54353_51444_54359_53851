@@ -14,8 +14,8 @@ namespace BookstoreTests.MockConfig
             var mockedClientDal = Substitute.For<IClientDal>();
 
             mockedClientDal.AddClientAsync(_correctClientModel, _cancellationToken).Returns(true);
-            mockedClientDal.DeleteClientAsync(_correctClientModel, _cancellationToken).Returns(true);
-            mockedClientDal.UpdateClientAsync(_correctClientModel, _cancellationToken).Returns(true);
+            mockedClientDal.DeleteClientAsync(_correctClientId, _cancellationToken).Returns(true);
+            mockedClientDal.UpdateClientAsync(_correctClientId, _correctClientModel, _cancellationToken).Returns(true);
             mockedClientDal.GetClientsAsync(_cancellationToken).Returns(new List<ClientModel> {
                 new ClientModel{ Id=1, Name="Client1"},
                 new ClientModel{ Id=2, Name="Client2"},
@@ -23,8 +23,8 @@ namespace BookstoreTests.MockConfig
                 });
 
             mockedClientDal.AddClientAsync(_incorrectClientModel, _cancellationToken).Returns(false);
-            mockedClientDal.DeleteClientAsync(_incorrectClientModel, _cancellationToken).Returns(false);
-            mockedClientDal.UpdateClientAsync(_incorrectClientModel,_cancellationToken).Returns(false);
+            mockedClientDal.DeleteClientAsync(_incorrectClientId, _cancellationToken).Returns(false);
+            mockedClientDal.UpdateClientAsync(_incorrectClientId, _incorrectClientModel, _cancellationToken).Returns(false);
 
             _mockedClientDal = mockedClientDal;
         }

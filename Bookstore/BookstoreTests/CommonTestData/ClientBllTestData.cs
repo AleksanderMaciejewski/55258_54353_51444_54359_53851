@@ -6,6 +6,10 @@ namespace BookstoreTests.CommonTestData
     {
         public CancellationToken _cancellationToken;
 
+        public int _correctClientId = 1;
+
+        public int _incorrectClientId = -1;
+
         public ClientModel _correctClientModel;
 
         public ClientModel _incorrectClientModel;

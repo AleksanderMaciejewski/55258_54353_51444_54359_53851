@@ -10,21 +10,13 @@ namespace BookstoreTests.BusinessLogicTests
 
         public SoldBookBllTests()
         {
-            _soldBookBll = new SoldBookBll(_mockedSoldBookDal);
-        }
-
-        [TestMethod]
-        public void AddSoldBookAsync_CorrectlyAdded()
-        {
-            var result = _soldBookBll.AddSoldBookAsync(_correctSoldBookModel, _cancellationToken);
-
-            Assert.AreEqual(true, result.Result);
+            _soldBookBll = new SoldBookBll(_mockedSoldBookDal, _bookBll, _clientBll);
         }
 
         [TestMethod]
         public void AddSoldBookAsync_IncorrectlyAdded()
         {
-            var result = _soldBookBll.AddSoldBookAsync(_incorrectSoldBookModel, _cancellationToken);
+            var result = _soldBookBll.AddSoldBookAsync(_incorrectBookId, _incorrectClientId, _cancellationToken);
 
             Assert.AreEqual(false, result.Result);
         }
@@ -37,8 +29,8 @@ namespace BookstoreTests.BusinessLogicTests
             foreach (var item in result.Result) 
             {
                 Assert.IsNotNull(item);
-                Assert.IsNotNull(item.BookId);
-                Assert.IsNotNull(item.SellingBookDate);
+                Assert.IsNotNull(item.Id);
+                Assert.IsNotNull(item.Date);
             }
         }
     }

@@ -32,7 +32,7 @@ namespace BookstoreTests.BusinessLogicTests
         [TestMethod]
         public void DeleteClientAsync_CorrectlyDeleted()
         {
-            var result =  _clientBll.DeleteClientAsync(_correctClientModel, _cancellationToken);
+            var result =  _clientBll.DeleteClientAsync(_correctClientId, _cancellationToken);
 
             Assert.AreEqual(true, result.Result);
         }
@@ -40,7 +40,7 @@ namespace BookstoreTests.BusinessLogicTests
         [TestMethod]
         public void DeleteClientAsync_IncorrectlyDeleted()
         {
-            var result = _clientBll.DeleteClientAsync(_incorrectClientModel, _cancellationToken);
+            var result = _clientBll.DeleteClientAsync(_incorrectClientId, _cancellationToken);
 
             Assert.AreEqual(false, result.Result);
         }
@@ -48,7 +48,7 @@ namespace BookstoreTests.BusinessLogicTests
         [TestMethod]
         public void UpdateClientAsync_CorrectlyUpdated()
         {
-            var result = _clientBll.UpdateClientAsync(_correctClientModel, _cancellationToken);
+            var result = _clientBll.UpdateClientAsync(_correctClientId, _correctClientModel, _cancellationToken);
 
             Assert.AreEqual(true, result.Result);
         }
@@ -56,7 +56,7 @@ namespace BookstoreTests.BusinessLogicTests
         [TestMethod]
         public void UpdateClientAsync_IncorrectlyUpdated()
         {
-            var result = _clientBll.UpdateClientAsync(_incorrectClientModel, _cancellationToken);
+            var result = _clientBll.UpdateClientAsync(_incorrectClientId, _incorrectClientModel, _cancellationToken);
 
             Assert.AreEqual(false, result.Result);
         }
