@@ -1,27 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bookstore.BusinessLogic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Controllers
 {
+    // Controller class for handling client-related HTTP requests
     public class ClientController : Controller
     {
-        public IActionResult Add()
+        private readonly IClientBll _clientBll;
+        
+        public ClientController(IClientBll clientBll)
         {
-            return View();
+            _clientBll = clientBll;
         }
 
-        public IActionResult Delete()
+        public async Task<IActionResult> Home(CancellationToken ct)
         {
-            return View();
-        }
-
-        public IActionResult Update()
-        {
-            return View();
-        }
-
-        public IActionResult Konto()
-        {
-            return View();
+            var clients = await _clientBll.GetClientsAsync(ct);
+            return View(clients);
         }
 
     }

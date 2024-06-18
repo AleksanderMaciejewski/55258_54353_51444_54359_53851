@@ -17,7 +17,7 @@
   <Class Name="Bookstore.Models.BookSummaryModel">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAEAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\BookSummaryModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,14 +38,14 @@
   <Class Name="Bookstore.Models.OrderedBookModel">
     <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Models\OrderedBookModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bookstore.Models.SoldBookModel">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Models\SoldBookModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="Bookstore.BusinessLogic.BookBll" BaseTypeListCollapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAgAAAAEAAAAE=</HashCode>
+      <HashCode>AAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAgAAAAEQAAAE=</HashCode>
       <FileName>BusinessLogic\BookBll.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -67,7 +67,7 @@
   <Class Name="Bookstore.BusinessLogic.ClientBll" BaseTypeListCollapsed="true">
     <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAACAAABIAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAEAAAAAAAAACAAABIAAACAAAA=</HashCode>
       <FileName>BusinessLogic\ClientBll.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -99,49 +99,42 @@
   <Class Name="Bookstore.Controllers.BookController">
     <Position X="19.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\BookController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bookstore.Controllers.ClientController">
     <Position X="21" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAA=</HashCode>
       <FileName>Controllers\ClientController.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Bookstore.Controllers.HomeController">
-    <Position X="22.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAQAAAAEAAAAAAAA=</HashCode>
-      <FileName>Controllers\HomeController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bookstore.Controllers.OrderedBookController">
     <Position X="19.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\OrderedBookController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bookstore.Controllers.SoldBookController">
     <Position X="21" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\SoldBookController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bookstore.Controllers.WarehouseController">
     <Position X="22.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controllers\WarehouseController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bookstore.DataAccess.BookDal" BaseTypeListCollapsed="true">
     <Position X="26.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAEAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAEQAAAE=</HashCode>
       <FileName>DataAccess\BookDal.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -149,7 +142,7 @@
   <Class Name="Bookstore.DataAccess.ClientDal" BaseTypeListCollapsed="true">
     <Position X="28.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAABIAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAACAAABIAAACAAAA=</HashCode>
       <FileName>DataAccess\ClientDal.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -169,6 +162,13 @@
       <FileName>DataAccess\SoldBookDal.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Bookstore.Controllers.HomeController">
+    <Position X="22.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAQAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Seoge  UI" Size="9" />
 </ClassDiagram>

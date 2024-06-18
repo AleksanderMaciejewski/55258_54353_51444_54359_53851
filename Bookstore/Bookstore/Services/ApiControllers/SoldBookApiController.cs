@@ -16,9 +16,9 @@ namespace Bookstore.Services.ApiControllers
         }
 
         [HttpPost("Add")]
-        public async Task<ActionResult<bool>> AddSoldBookAsync(SoldBookModel soldBook, CancellationToken ct)
+        public async Task<ActionResult<bool>> AddSoldBookAsync(int book, int client, CancellationToken ct)
         {
-            return await _soldBookBll.AddSoldBookAsync(soldBook, ct);
+            return await _soldBookBll.AddSoldBookAsync(book, client, ct);
         }
 
         [HttpGet("GetAll")]

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Bookstore.Models
 {
     public class BookModel
@@ -10,10 +9,4 @@ namespace Bookstore.Models
 
     }
 
-    public class BookDBContext : DbContext
-    {
-        public DbSet<BookModel> Books { get; set; }
-    }
-
-    // https://learn.microsoft.com/pl-pl/aspnet/mvc/overview/getting-started/introduction/creating-a-connection-string
 }

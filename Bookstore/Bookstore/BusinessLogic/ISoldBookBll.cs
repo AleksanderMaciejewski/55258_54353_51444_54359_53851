@@ -4,7 +4,7 @@ namespace Bookstore.BusinessLogic
 {
     public interface ISoldBookBll
     {
-        Task<bool> AddSoldBookAsync(SoldBookModel soldBook, CancellationToken ct);
+        Task<bool> AddSoldBookAsync(int bookId, int clientId, CancellationToken ct);
         Task<List<SoldBookModel>> GetAllAsync(CancellationToken ct);
     }
 }

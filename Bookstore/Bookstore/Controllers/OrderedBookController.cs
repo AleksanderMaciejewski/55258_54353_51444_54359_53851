@@ -1,18 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bookstore.BusinessLogic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Controllers
 {
+    // Controller class for handling ordered book-related HTTP requests
     public class OrderedBookController : Controller
     {
-
-        public IActionResult Add()
+        private readonly IOrderedBookBll _orderedBookBll;
+        public OrderedBookController(IOrderedBookBll orderedBookBll)
         {
-            return View();
+            _orderedBookBll = orderedBookBll;
         }
 
-        public IActionResult GetAll()
+        public async Task<IActionResult> Home(CancellationToken ct)
         {
-            return View();
+            var model = await _orderedBookBll.GetAllAsync(ct);
+            return View(model);
         }
 
     }

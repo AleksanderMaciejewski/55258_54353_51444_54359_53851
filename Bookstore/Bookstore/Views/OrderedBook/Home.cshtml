@@ -1,0 +1,29 @@
+﻿@model List<OrderedBookModel>
+
+<div id="home" class="page">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data</th>
+                    <th>Id Książki</th>
+                    <th>Tytuł</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.Id</td>
+                        <td>@order.Date</td>
+                        <td>@order.Book.Id</td>
+                        <td>@order.Book.Title</td>
+                        <td>@order.Book.Author</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

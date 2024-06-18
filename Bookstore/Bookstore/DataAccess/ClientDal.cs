@@ -10,13 +10,13 @@ namespace Bookstore.DataAccess
             // true if added successfully false if not
         }
 
-        public async Task<bool> DeleteClientAsync(ClientModel client, CancellationToken ct)
+        public async Task<bool> DeleteClientAsync(int id, CancellationToken ct)
         {
             return true;
             // true if deleted successfully false if not
         }
 
-        public async Task<bool> UpdateClientAsync(ClientModel client, CancellationToken ct)
+        public async Task<bool> UpdateClientAsync(int id, ClientModel client, CancellationToken ct)
         {
             return true;
             // true if updated successfully false if not
@@ -36,6 +36,15 @@ namespace Bookstore.DataAccess
                     Id = 2,
                     Name = "name2"
                 }
+            };
+        }
+
+        public async Task<ClientModel> GetClientByIdAsync(int id, CancellationToken ct)
+        {
+            return new ClientModel()
+            {
+                Id = 1,
+                Name = "name"
             };
         }
 

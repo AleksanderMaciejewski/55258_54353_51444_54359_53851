@@ -2,6 +2,8 @@
 
 <script>
     let editBookId = null;
+    let sellBookId = null;
+    let orderBookId = null;
     function toggleAddBookForm() {
         var addBookForm = document.getElementById("addBookForm");
         addBookForm.style.display = addBookForm.style.display === "none" ? "block" : "none";
@@ -10,6 +12,18 @@
     function toggleEditBookForm() {
         var editBookForm = document.getElementById("editBookForm");
         editBookForm.style.display = editBookForm.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleSellBookForm(id = null) {
+        sellBookId = id;
+        var sellBookForm = document.getElementById("sellBookForm");
+        sellBookForm.style.display = sellBookForm.style.display === "none" ? "block" : "none";
+    }
+
+    function toggleOrderBookForm(id = null) {
+        orderBookId = id;
+        var orderBookForm = document.getElementById("orderBookForm");
+        orderBookForm.style.display = orderBookForm.style.display === "none" ? "block" : "none";
     }
 
     function editBook(id) {
@@ -45,19 +59,19 @@
 
 <div id="home" class="page">
     <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search by title or author">
-        <button onclick="searchBook()">Search</button>
+        <input type="text" id="searchInput" placeholder="Wyszukaj po tytule lub autorze">
+        <button onclick="searchBook()">Szukaj</button>
     </div>
     <div class="table-container">
-        <div class="add-book-button" id="addBookButton">
-            <button onclick="toggleAddBookForm()">Add New Book</button>
+        <div class="add-button" id="addBookButton">
+            <button onclick="toggleAddBookForm()">Dodaj nową książkę</button>
         </div>
         <form id="addBookForm" style="display: none;">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required><br>
             <label for="author">Author:</label>
             <input type="text" id="author" name="author" required><br>
-            <button type="submit">Add</button>
+            <button type="submit">Dodaj</button>
         </form>
         <table>
             <thead>
@@ -76,8 +90,10 @@
                         <td>@book.Title</td>
                         <td>@book.Author</td>
                         <td>
-                            <button onclick="editBook(@book.Id)">Edit</button>
-                            <button onclick="deleteBook(@book.Id)">Delete</button>
+                            <button onclick="editBook(@book.Id)">Edytuj</button>
+                            <button onclick="deleteBook(@book.Id)">Usuń</button>
+                            <button onclick="toggleSellBookForm(@book.Id)">Sprzedaj</button>
+                            <button onclick="toggleOrderBookForm(@book.Id)">Zamów</button>
                         </td>
                     </tr>
                 }
@@ -90,10 +106,87 @@
             <input type="text" id="editAuthor" name="author" required><br>
             <button type="submit">Save Changes</button>
         </form>
+
+        <form id="sellBookForm" style="display: none;">
+            <label for="client">Klient:</label>
+            <input type="text" id="client" name="client" required><br>
+            <button type="submit">Sprzedaj</button>
+        </form>
+
+        <form id="orderBookForm" style="display: none;">
+            <label for="client">Klient:</label>
+            <input type="text" id="client" name="client" required><br>
+            <button type="submit">Zamów</button>
+        </form>
+
     </div>
 </div>
 
 <script>
+    document.getElementById("sellBookForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var jsonData = {};
+        var client;
+        formData.forEach(function (value, key) {
+            client= value;
+        });
+
+        fetch('/api/SoldBook/Add?book=' + sellBookId + "&client=" + client, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                document.getElementById("client").value = "";
+                toggleSellBookForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+
+    document.getElementById("orderBookForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var jsonData = {};
+        var client;
+        formData.forEach(function (value, key) {
+            client = value;
+        });
+
+        fetch('/api/OrderedBook/Add?book=' + orderBookId + "&client=" + client, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                document.getElementById("client").value = "";
+                toggleOrderBookForm();
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    });
+
     document.getElementById("addBookForm").addEventListener("submit", function (event) {
         event.preventDefault(); 
         var formData = new FormData(this);
@@ -174,85 +267,3 @@
     }
 
 </script>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .page {
-        padding: 20px;
-    }
-
-    .search-bar {
-        margin-bottom: 20px;
-    }
-
-        .search-bar input[type="text"], .search-bar button {
-            padding: 8px;
-            border: none;
-            border-radius: 5px;
-            margin-right: 5px;
-        }
-
-    .table-container {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th, td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    .add-book-button {
-        margin-bottom: 20px;
-    }
-
-    .add-book-button button, button {
-        padding: 10px 10px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    form {
-        margin-bottom: 20px;
-    }
-
-    label {
-        margin-right: 10px;
-    }
-
-    input[type="text"] {
-        padding: 8px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
-    }
-
-    button[type="submit"] {
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-</style>

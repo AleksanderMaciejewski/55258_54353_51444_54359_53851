@@ -1,0 +1,29 @@
+﻿@model List<SoldBookModel>
+
+<div id="home" class="page">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data</th>
+                    <th>Id Książki</th>
+                    <th>Tytuł</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.Id</td>
+                        <td>@record.Date</td>
+                        <td>@record.Book.Id</td>
+                        <td>@record.Book.Title</td>
+                        <td>@record.Book.Author</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
