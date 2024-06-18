@@ -16,9 +16,9 @@ namespace BookstoreTests.MockConfig
             mockedSoldBookDal.AddSoldBookAsync(_correctSoldBookModel, _cancellationToken).Returns(true);
             mockedSoldBookDal.GetAllAsync(_cancellationToken).Returns(new List<SoldBookModel>
             {
-                new SoldBookModel{ BookId = 1, SellingBookDate = DateTime.Now},
-                new SoldBookModel{ BookId = 2, SellingBookDate = DateTime.Now},
-                new SoldBookModel{ BookId = 3, SellingBookDate = DateTime.Now},
+                new SoldBookModel{ Id = 1, Date = DateTime.Now},
+                new SoldBookModel{ Id = 2, Date = DateTime.Now},
+                new SoldBookModel{ Id = 3, Date = DateTime.Now},
             });
 
             mockedSoldBookDal.AddSoldBookAsync(_incorrectSoldBookModel, _cancellationToken).Returns(false);

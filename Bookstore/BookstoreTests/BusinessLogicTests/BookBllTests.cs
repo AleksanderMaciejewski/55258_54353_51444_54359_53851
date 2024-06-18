@@ -32,7 +32,7 @@ namespace BookstoreTests.BusinessLogic
         [TestMethod]
         public void DeleteBookAsync_CorrectlyDeleted()
         {
-            var result = _bookBll.DeleteBookAsync(_correctBookModel, _cancellationToken);
+            var result = _bookBll.DeleteBookAsync(_correctBookId, _cancellationToken);
 
             Assert.AreEqual(true, result.Result);
         }
@@ -40,7 +40,7 @@ namespace BookstoreTests.BusinessLogic
         [TestMethod]
         public void DeleteBookAsync_IncorrectlyDeleted()
         {
-            var result = _bookBll.DeleteBookAsync(_incorrectBookModel, _cancellationToken);
+            var result = _bookBll.DeleteBookAsync(_incorrectBookId, _cancellationToken);
 
             Assert.AreEqual(false, result.Result);
         }
@@ -48,7 +48,7 @@ namespace BookstoreTests.BusinessLogic
         [TestMethod]
         public void UpdateBookAsync_CorrectlyUpdated()
         {
-            var result = _bookBll.UpdateBookAsync(_correctBookModel, _cancellationToken);
+            var result = _bookBll.UpdateBookAsync(_correctBookId, _correctBookModel, _cancellationToken);
 
             Assert.AreEqual(true, result.Result);
         }
@@ -56,7 +56,7 @@ namespace BookstoreTests.BusinessLogic
         [TestMethod]
         public void UpdateBookAsync_IncorrectlyUpdated()
         {
-            var result = _bookBll.UpdateBookAsync(_incorrectBookModel, _cancellationToken);
+            var result = _bookBll.UpdateBookAsync(_incorrectBookId, _incorrectBookModel, _cancellationToken);
 
             Assert.AreEqual(false, result.Result);
         }

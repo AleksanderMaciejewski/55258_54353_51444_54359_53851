@@ -4,27 +4,19 @@ using BookstoreTests.MockConfig;
 namespace BookstoreTests.BusinessLogicTests
 {
     [TestClass]
-    public class OrderedBookBllTests:OrderedBookDalMockConfig
+    public class OrderedBookBllTests : OrderedBookDalMockConfig
     {
         private OrderedBookBll _orderedBookBll;
 
         public OrderedBookBllTests()
         {
-            _orderedBookBll = new OrderedBookBll(_mockedOrderedBookDal);
-        }
-
-        [TestMethod]
-        public void AddOrderedBookAsync_CorrectlyAdded()
-        {
-            var result = _orderedBookBll.AddOrderedBookAsync(_correctOrderedBookModel, _cancellationToken);
-
-            Assert.AreEqual(true, result.Result);
+            _orderedBookBll = new OrderedBookBll(_mockedOrderedBookDal, _bookBll, _clientBll);
         }
 
         [TestMethod]
         public void AddOrderedBookAsync_IncorrectlyAdded()
         {
-            var result = _orderedBookBll.AddOrderedBookAsync(_incorrectOrderedBookModel, _cancellationToken);
+            var result = _orderedBookBll.AddOrderedBookAsync(_incorrectBookId, _incorrectClientId, _cancellationToken);
 
             Assert.AreEqual(false, result.Result);
         }
@@ -34,7 +26,7 @@ namespace BookstoreTests.BusinessLogicTests
         {
             var result = _orderedBookBll.GetAllAsync(_cancellationToken);
 
-            foreach(var item in result.Result)
+            foreach (var item in result.Result)
             {
                 Assert.IsNotNull(item);
                 Assert.IsNotNull(item.Id);

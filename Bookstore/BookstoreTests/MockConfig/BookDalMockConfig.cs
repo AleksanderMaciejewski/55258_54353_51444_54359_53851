@@ -14,8 +14,8 @@ namespace BookstoreTests.MockConfig
             var mockedBookDal = Substitute.For<IBookDal>();
 
             mockedBookDal.AddBookAsync(_correctBookModel, _cancellationToken).Returns(true);
-            mockedBookDal.DeleteBookAsync(_correctBookModel, _cancellationToken).Returns(true);
-            mockedBookDal.UpdateBookAsync(_correctBookModel, _cancellationToken).Returns(true);
+            mockedBookDal.DeleteBookAsync(_correctBookId, _cancellationToken).Returns(true);
+            mockedBookDal.UpdateBookAsync(_correctBookId, _correctBookModel, _cancellationToken).Returns(true);
             mockedBookDal.GetBooksAsync(_cancellationToken).Returns(new List<BookModel>
             {
                 new BookModel{ Id = 1, Author = "Author1", Title = "Title1"},
@@ -24,8 +24,8 @@ namespace BookstoreTests.MockConfig
             });
 
             mockedBookDal.AddBookAsync(_incorrectBookModel, _cancellationToken).Returns(false);
-            mockedBookDal.DeleteBookAsync(_incorrectBookModel, _cancellationToken).Returns(false);
-            mockedBookDal.UpdateBookAsync(_incorrectBookModel, _cancellationToken).Returns(false);
+            mockedBookDal.DeleteBookAsync(_incorrectBookId, _cancellationToken).Returns(false);
+            mockedBookDal.UpdateBookAsync(_incorrectBookId, _incorrectBookModel, _cancellationToken).Returns(false);
 
             _mockedBookDal = mockedBookDal;
         }
