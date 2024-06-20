@@ -44,23 +44,23 @@
 
 <div id="home" class="page">
     <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search by name">
-        <button onclick="searchClient()">Search</button>
+        <input type="text" id="searchInput" placeholder="Wyszukaj po nazwie">
+        <button onclick="searchClient()">Szukaj</button>
     </div>
     <div class="table-container">
         <div class="add-button" id="addClientButton">
-            <button onclick="toggleAddClientForm()">Add New Client</button>
+            <button onclick="toggleAddClientForm()">Dodaj nowego klienta</button>
         </div>
         <form id="addClientForm" style="display: none;">
             <label for="name">Nazwa:</label>
             <input type="text" id="name" name="name" required><br>
-            <button type="submit">Add</button>
+            <button type="submit">Dodaj</button>
         </form>
         <table>
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
+                    <th>Nazwa</th>
                     <th></th>
                 </tr>
             </thead>
@@ -71,17 +71,17 @@
                         <td>@client.Id</td>
                         <td>@client.Name</td>
                         <td>
-                            <button onclick="editClient(@client.Id)">Edit</button>
-                            <button onclick="deleteClient(@client.Id)">Delete</button>
+                            <button onclick="editClient(@client.Id)">Edytuj</button>
+                            <button onclick="deleteClient(@client.Id)">Usuń</button>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
         <form id="editClientForm" style="display: none;">
-            <label for="editName">Name:</label>
+            <label for="editName">Nazwa:</label>
             <input type="text" id="editName" name="name" required><br>
-            <button type="submit">Save Changes</button>
+            <button type="submit">Zapisz zmiany</button>
         </form>
     </div>
 </div>

@@ -1,30 +1,28 @@
-﻿using Bookstore.Models;
+﻿using Bookstore.Data;
+using Bookstore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.DataAccess
 {
     public class OrderedBookDal : IOrderedBookDal
     {
-        public async Task<bool> AddOrderedBookAsync(OrderedBookModel soldBook, CancellationToken ct)
+        private readonly ApplicationDbContext _context;
+
+        public OrderedBookDal(ApplicationDbContext context)
         {
-            return true;
+            _context = context;
+        }
+
+        public async Task<bool> AddOrderedBookAsync(OrderedBookModel orderedBookModel, CancellationToken ct)
+        {
+            _context.OrderedBooks.Add(orderedBookModel);
+            return await _context.SaveChangesAsync(ct) > 0;
+            // true if added successfully false if not
         }
 
         public async Task<List<OrderedBookModel>> GetAllAsync(CancellationToken ct)
         {
-            return new List<OrderedBookModel>()
-            {
-                new OrderedBookModel()
-                {
-                    Id = 1,
-                    Date = DateTime.Now,
-                    Book = new BookModel()
-                    {
-                        Id = 1,
-                        Title = "Test",
-                        Author = "Test"
-                    }
-                }
-            };
+            return await _context.OrderedBooks.ToListAsync(ct);
         }
 
     }
